@@ -10,7 +10,7 @@ jobs:
       with:
         token: ${{ secrets.TOKEN }}
         function_id: ${{ secrets.FUNCTION_ID }}
-        runtime: 'python37'
+        runtime: 'python37-preview'
         memory: '256'
         entrypoint: 'main.handler'
         environment: DEBUG=True,COUNT=1

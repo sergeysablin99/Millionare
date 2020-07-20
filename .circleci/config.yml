@@ -4,6 +4,12 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
+  test-codestyle:
+    executor: python/default
+    steps:
+      - checkout
+      - run: pip install flake8
+      - run: flake8 documents SuperKrutoyDocumentooborot web --max-line-length=120
   build-and-test:
     executor: python/default
     steps:
@@ -18,4 +24,4 @@ jobs:
 workflows:
   main:
     jobs:
-      - build-and-test
+      - test-codestyle

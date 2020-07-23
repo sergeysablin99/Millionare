@@ -15,4 +15,10 @@ jobs:
         entrypoint: 'main.handler'
         environment: DEBUG=True,COUNT=1
         source: '.'
-        exclude: '.circleci/'
+        exclude: 
+		- '.circleci/'
+		- '.git/'
+		- '.github/'
+		- '.gitignore'
+		- 'README.md'
+		

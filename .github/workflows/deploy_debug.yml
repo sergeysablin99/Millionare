@@ -1,0 +1,21 @@
+name: Push and Deploy Serverless function
+on:
+  push:
+    branches:
+      - dev_exeynod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: goodsmileduck/yandex-serverless-action@v1
+      with:
+        token: ${{ secrets.DEBUG_TOKEN }}
+        function_id: ${{ secrets.DEBUG_FUNCTION_ID }}
+        runtime: 'python37-preview'
+        memory: '256'
+        entrypoint: 'main.handler'
+        environment: DEBUG=True,COUNT=1
+        source: '.'
+        exclude: 'src/'

@@ -10,16 +10,6 @@ jobs:
       - checkout
       - run: pip install flake8
       - run: flake8 documents SuperKrutoyDocumentooborot web --max-line-length=120
-  build-and-test:
-    executor: python/default
-    steps:
-      - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
-      - run:
-          command: 
-          name: Test
 
 workflows:
   main:

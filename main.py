@@ -3,7 +3,7 @@ from dialogues.dialogue_factory import Creator
 
 
 def handler(event, context):
-    cross_state = event['state']['user'].get('value')
+    cross_state = event['state'].get('user', {}).get('value')
     user = User(cross_state)
     if event['session']['new'] and 'auth' not in user.state:
         user.state = 'greet'

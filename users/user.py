@@ -13,7 +13,8 @@ class User:
             self.state = 'auth_begin'
 
     def build(self):
-        return json.dumps({
+        res = json.dumps({
             "name": self.name,
             "state": self.state
-        })
+        }, ensure_ascii=False)
+        return res

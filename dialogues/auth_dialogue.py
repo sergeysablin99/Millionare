@@ -6,7 +6,7 @@ class AuthDialogue(Dialogue):
     def __init__(self, request, user):
         if user.state == 'auth_begin':
             self.text = 'Приветствую. Для начала давайте познакомимся. Как вас зовут?'
-            self.text = self.tts
+            self.tts = self.text
             user.state = 'auth_wait'
         elif user.state == 'auth_wait':
             entities = request['nlu']['entities']

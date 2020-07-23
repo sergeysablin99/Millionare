@@ -1,14 +1,27 @@
+from users.user import User
+from dialogues.dialogue_factory import Creator
+
+
 def handler(event, context):
-    text = 'Hello! I\'ll repeat anything you say to me.'
-    if 'request' in event and \
-            'original_utterance' in event['request'] \
-            and len(event['request']['original_utterance']) > 0:
-        text = event['request']['original_utterance']
-    return {
-        'version': event['version'],
-        'session': event['session'],
+    cross_state = event['state']['user'].get('value')
+    user = User(cross_state)
+    if event['session']['new'] and 'auth' not in user.state:
+        user.state = 'greet'
+    dialogue = Creator.create(user)
+    result = dialogue(event['request'], user)
+    return form_response(event['version'], event['session'], result, user)
+
+
+def form_response(version, session, dialogue, user):
+    if dialogue.tts == 'Default':
+        dialogue.tts = dialogue.text
+    res = {
+        'version': version,
+        'session': session,
         'response': {
-            'text': text,
+            'text': dialogue.text,
             'end_session': 'false'
         },
+        "user_state_update": {"value": user.build()}
     }
+    return res

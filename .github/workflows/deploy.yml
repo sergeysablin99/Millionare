@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-name: Deploy Serverless function
-on: push
-=======
 name: Push and Deploy Serverless function
 on:
   push:
     branches:
       - master
->>>>>>> 1eec8b2835217d3ad2b67257cc420f920edb9cb9
 
 jobs:
   deploy:

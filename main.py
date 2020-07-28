@@ -76,5 +76,3 @@ def form_response(version, session, dialogue, user, state_key):
         state_key: {"value": user.build()}
     }
     return res
-
-

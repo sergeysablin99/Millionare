@@ -1,17 +1,32 @@
+from users.user import User
+from dialogues.dialogue_factory import Creator
+
+
 def handler(event, context):
-    text = 'Hello! I\'ll repeat anything you say to me.'
-    if 'request' in event and \
-            'original_utterance' in event['request'] \
-            and len(event['request']['original_utterance']) > 0:
-        text = event['request']['original_utterance']
-    return {
-        'version': event['version'],
-        'session': event['session'],
+    if event['state'].get('user'):
+        cross_state = event['state']['user'].get('value')
+        state_key = 'user_state_update'
+    else:
+        cross_state = event['state']['session'].get('value')
+        state_key = 'session_state'
+    user = User(cross_state)
+    if event['session']['new'] and 'auth' not in user.state:
+        user.state = 'greet'
+    dialogue = Creator.create(user)
+    result = dialogue(event['request'], user)
+    return form_response(event['version'], event['session'], result, user, state_key)
+
+
+def form_response(version, session, dialogue, user, state_key):
+    if dialogue.tts == 'Default':
+        dialogue.tts = dialogue.text
+    res = {
+        'version': version,
+        'session': session,
         'response': {
-            # Respond with the original request or welcome the user if this is the beginning of the dialog and the request has not yet been made.
-            'text': text,
-            # Don't finish the session after this response.
+            'text': dialogue.text,
             'end_session': 'false'
         },
+        state_key: {"value": user.build()}
     }
-    
+    return res

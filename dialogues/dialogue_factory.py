@@ -1,4 +1,12 @@
+from dialogues.auth_dialogue import AuthDialogue
+from dialogues.main_menu import MainMenu
+
+
 class Creator:
 
-    def create(self, req, user):
-        pass
+    @staticmethod
+    def create(user):
+        if 'auth' in user.state:
+            return AuthDialogue
+        else:
+            return MainMenu

@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-name: Deploy Serverless function
-on: push
-=======
 name: Push and Deploy Serverless function
 on:
   push:
     branches:
-      - master
->>>>>>> 1eec8b2835217d3ad2b67257cc420f920edb9cb9
+      - sasablin_dev
 
 jobs:
   deploy:
@@ -17,10 +12,10 @@ jobs:
     - uses: goodsmileduck/yandex-serverless-action@v1
       with:
         token: ${{ secrets.TOKEN }}
-        function_id: ${{ secrets.FUNCTION_ID }}
+        function_id: ${{ secrets.SASABLIN_DEBUG_FUNCTION }}
         runtime: 'python37-preview'
         memory: '256'
         entrypoint: 'main.handler'
         environment: DEBUG=True,COUNT=1
         source: '.'
-        exclude: '.circleci/'
+        exclude: 'src/'

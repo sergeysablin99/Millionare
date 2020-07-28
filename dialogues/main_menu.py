@@ -4,8 +4,8 @@ from dialogues.base_dialogue import Dialogue
 class MainMenu(Dialogue):
 
     def __init__(self, request, user):
-            self.text =  'Текст главного меню',
-            self.tts =  self.text,
+            self.text = 'Текст главного меню'
+            self.tts =  self.text
             self.card = {
                 "type": "ItemsList",
                 "header": {
@@ -41,7 +41,7 @@ class MainMenu(Dialogue):
                         "payload": {}
                     }
                 }
-            },
+            }
             self.buttons = [
                 {
                     "title": "Надпись на кнопке",

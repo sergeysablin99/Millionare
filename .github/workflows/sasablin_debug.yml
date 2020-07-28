@@ -2,7 +2,7 @@ name: Push and Deploy Serverless function
 on:
   push:
     branches:
-      - sasablin_dev
+      - sasablin-dev
 
 jobs:
   deploy:

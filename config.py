@@ -26,12 +26,13 @@ def give_buttons(*args, **kwargs):
         "header": ...,
         "description": ....
         "input": ...
+        "image": ...(may not exist)
     }
 '''
 
 
 def make_menu(header, args):
-    return {
+    res = {
         "type": "ItemsList",
         "header": {"text": header},
         "items": [{
@@ -42,6 +43,10 @@ def make_menu(header, args):
             }
         } for item in args]
     }
+    for i, item in enumerate(args):
+        if "image" in item:
+            res['items'][i] = item['image']
+    return res
 
 
 def make_image(image_id, description):

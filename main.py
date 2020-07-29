@@ -20,13 +20,14 @@ def handler(event, context):
 def form_response(version, session, dialogue, user, state_key):
     if dialogue.tts == 'Default':
         dialogue.tts = dialogue.text
+    response = {
+        'text': dialogue.text,
+        "tts": dialogue.tts
+    }
     if dialogue.card:
-        response = dialogue.answer
-    else:
-        response = {
-            'text': dialogue.text,
-            'end_session': 'false'
-        }
+        response['card'] = dialogue.card
+    if dialogue.buttons:
+        response['buttons'] = dialogue.buttons
     res = {
         'version': version,
         'session': session,

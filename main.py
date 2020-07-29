@@ -14,6 +14,7 @@ def handler(event, context):
         user.state = 'greet'
     dialogue = Creator.create(user)
     result = dialogue(event['request'], user)
+    print(f"Request: {event}, response: {result.text}")
     return form_response(event['version'], event['session'], result, user, state_key)
 
 

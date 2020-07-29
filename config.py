@@ -45,7 +45,7 @@ def make_menu(header, args):
     }
     for i, item in enumerate(args):
         if "image" in item:
-            res['items'][i] = item['image']
+            res['items'][i]['image_id'] = item['image']
     return res
 
 

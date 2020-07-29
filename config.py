@@ -39,7 +39,7 @@ def make_menu(header, args):
             "title": item['title'],
             "description": item['description'],
             "button": {
-                "text": item['input']
+                "text": item['button']
             }
         } for item in args]
     }

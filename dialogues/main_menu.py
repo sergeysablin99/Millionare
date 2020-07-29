@@ -8,5 +8,5 @@ class MainMenu(Dialogue):
         self.text = 'Вы в главном меню. Желаете сыграть, посмотреть достижения или ознакомиться с рейтингом игроков?'
         self.tts = self.text
         self.card = get_file(menus, 'main_menu')
-        self.card = make_menu(self.card['title'], self.card['content'])
+        self.card = make_menu(self.card['header'], self.card['content'])
         self.buttons = give_buttons("Надпись на кнопке", "Надпись 2")

@@ -36,7 +36,7 @@ def make_menu(header, args):
         "type": "ItemsList",
         "header": {"text": header},
         "items": [{
-            "title": item['header'],
+            "title": item['title'],
             "description": item['description'],
             "button": {
                 "text": item['input']

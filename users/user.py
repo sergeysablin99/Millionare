@@ -9,7 +9,10 @@ default cross state
 }
 '''
 
-achievements = ['first', 'second']
+achievements = ["road_to_million", "easy_start", "steady_rise", "thorny_road", "warm_up_is_over",
+                "increased_rates", "millionaire", "cleverest", "too_easy", "scoop", "decent_game",
+                "reliable_victory", "champion", "serious_sam", "beginner", "druz", "professor",
+                "like_a_boss", "so_easy", "lovely_user", "fan"]
 # Достижения находятся в content/achievements.json
 # Чтобы достать ачивку
 '''

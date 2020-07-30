@@ -1,125 +1,125 @@
 {
-  "1": {
+  "road_to_million": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "На пути к миллиону",
     "description": "Проведи в игре 1 день",
     "score": 2
   },
-  "2": {
+  "easy_start": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Лёгкое начало",
     "description": "Проведи 2 дня в игре",
     "score": 3
   },
-  "3": {
+  "steady_rise": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Уверенный подъем",
     "description": "Проведи в игре 3 дня",
     "score": 10
   },
-  "4": {
+  "thorny_road": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Тернистый путь",
     "description": "Проведи в игре 7 дней",
     "score": 15
   },
-  "5": {
+  "warm_up_is_over": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Разминка окончена",
     "description": "Пройдите первые 5 вопросов",
     "score": 5
   },
-  "6": {
+  "increased_rates": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Ставки возросли",
     "description": "Пройдите первые 10 вопросов",
     "score": 15
   },
-  "7": {
+  "millionaire": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Миллионер",
     "description": "Дойди до конца",
     "score": 100
   },
-  "8": {
+  "cleverest": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Самый умный",
     "description": "Ответь верно вопреки мнению большинства",
     "score": 30
   },
-  "9": {
+  "too_easy": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Слишком просто",
     "description": "Пройди игру без подсказок",
     "score": 80
   },
-  "10": {
+  "scoop": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Большой куш",
     "description": "Заверши игру с суммой не менее 100.000",
     "score": 100
   },
-  "11": {
+  "decent_game": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Достойная игра",
     "description": "Заверши игру, забрав деньги",
     "score": 80
   },
-  "12": {
+  "reliable_victory": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Надежная победа",
     "description": "Забери несгораемую сумму",
     "score": 100
   },
-  "13": {
+  "champion": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Чемпион",
     "description": "Займи первое место в рейтинге",
     "score": 100
   },
-  "14": {
+  "serious_sam": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Serious Sam",
     "description": "Получи 1000 очков рейтинга",
     "score": 100
   },
-  "15": {
+  "beginner": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Новичок",
     "description": "Получи 100 очков рейтинга",
     "score": 20
   },
-  "16": {
+  "druz": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Александр Абрамович?",
     "description": "Выиграй игру менее, чем за 10 минут",
     "score": 40
   },
-  "17": {
+  "professor": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Профессор",
     "description": "Получи 500 очков рейтинга",
     "score": 50
   },
-  "18": {
+  "like_a_boss": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Like a Boss",
     "description": "Ответь на 5 вопросов без подсказок",
     "score": 20
   },
-  "19": {
+  "so_easy": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Так просто?",
     "description": "Ответь на 10 вопросов без подсказок",
     "score": 60
   },
-  "20": {
+  "lovely_user": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Любимый пользователь",
     "description": "Сыграть 50 игр",
     "score": 20
   },
-  "21": {
+  "fan": {
     "image": "213044/e8f8975903f306b9a951",
     "title": "Фанат",
     "description": "Сыграть 100 игр",

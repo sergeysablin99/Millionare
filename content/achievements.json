@@ -1,10 +1,12 @@
 {
   "first": {
+    "image": "image_id",
     "title": "Заголовок",
     "description": "Описание",
     "score": 10
   },
   "second": {
+    "image": "image_id",
     "title": "Заголовок",
     "description": "Описание",
     "score": 10

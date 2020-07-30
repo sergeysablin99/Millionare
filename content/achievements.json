@@ -1,0 +1,12 @@
+{
+  "first": {
+    "title": "Заголовок",
+    "description": "Описание",
+    "score": 10
+  },
+  "second": {
+    "title": "Заголовок",
+    "description": "Описание",
+    "score": 10
+  }
+}

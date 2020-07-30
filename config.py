@@ -2,12 +2,9 @@ import json
 
 default_answers = 'content/answers.json'
 menus = 'content/menus.json'
-basic = 'content/basics.json'
 go_on = ['далее', 'дальше', 'продолжим', "продолжить", "продолжай", "продолжи", "хочу", "хотим", "хотелось", "давай",
          "следующщий", "следом", "след"]
-history = 'content/history.json'
-facts = 'content/facts.json'
-quest = 'content/quest.json'
+achievements_path = 'content/achievements.json'
 
 
 def get_file(path, key=None):

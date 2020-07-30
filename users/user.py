@@ -34,7 +34,7 @@ class User:
                 self.name = cross_state['name']
             for achievement in achievements:
                 if achievement not in cross_state:
-                    self.__setattr__(achievement, False)
+                    self.__dict__[achievement] = False
                 else:
                     self.__setattr__(achievement, cross_state[achievement])
         else:
@@ -42,8 +42,5 @@ class User:
             self.state = 'auth_begin'
 
     def build(self):
-        res = json.dumps({
-            "name": self.name,
-            "state": self.state
-        }, ensure_ascii=False)
+        res = json.dumps(self.__dict__, ensure_ascii=False)
         return res

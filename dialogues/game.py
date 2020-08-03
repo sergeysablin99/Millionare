@@ -5,7 +5,7 @@ from dialogues.base_dialogue import Dialogue
 class Game(Dialogue):
 
     def check_answer(self, tokens, level, question):
-        return len(set(get_file(questions_path[self.define_level(level)])[question]) & tokens) > 0
+        return len(set(get_file(questions_path[self.define_level(level)], 'questions')[question]) & tokens) > 0
 
     def __init__(self, request, user):
         tokens = set(request['nlu']['tokens'])
@@ -23,6 +23,7 @@ class Game(Dialogue):
                 self.text = 'К сожалению, ваш ответ оказался неверным'
                 user.state = 'menu'
                 user.game = {}
+                return
         question = self.give_question(user.game)
         self.text = question['text']
         self.tts = question['tts']
@@ -42,6 +43,5 @@ class Game(Dialogue):
         question = randint(0, len(questions) - 1)
         while question in past_questions:
             question = randint(0, len(questions) - 1)
-        game_stat['past_question'] = question
         game_stat['past_questions'].append(question)
         return questions[question]

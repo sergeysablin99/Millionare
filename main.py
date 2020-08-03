@@ -12,7 +12,7 @@ def handler(event, context):
     user = User(cross_state)
     if event['session']['new'] and 'auth' not in user.state:
         user.state = 'greet'
-    if event['request']['intents'].get('GAME'):
+    if event['request']['nlu']['intents'].get('GAME'):
         user.state = 'game'
     dialogue = Creator.create(user)
     result = dialogue(event['request'], user)

@@ -4,22 +4,21 @@ from dialogues.base_dialogue import Dialogue
 
 class Game(Dialogue):
 
-    def check_answer(self, tokens, num):
-        return len(set(get_file(questions_path[self.define_level(num)])[num]) & tokens) > 0
+    def check_answer(self, tokens, level, question):
+        return len(set(get_file(questions_path[self.define_level(level)])[question]) & tokens) > 0
 
     def __init__(self, request, user):
         tokens = set(request['nlu']['tokens'])
-        if user.__dict__.get('game', {}):
+        if not user.__dict__.get('game', {}):
             user.game = {
                 'question': 1,
-                'past_question': 0,
-                "past_questions": {}
+                "past_questions": []
             }
         else:
-            num = user.game['question']
-            if self.check_answer(tokens, num):
+            level = user.game['question']
+            question = user.game['past_questions'][-1]
+            if self.check_answer(tokens, level, question):
                 user.game['question'] += 1
-                user['past_questions'].add(num)
             else:
                 self.text = 'К сожалению, ваш ответ оказался неверным'
                 user.state = 'menu'
@@ -40,8 +39,9 @@ class Game(Dialogue):
         num, past_questions = game_stat['question'], game_stat['past_questions']
         from random import randint
         questions = get_file(questions_path[self.define_level(num)], 'questions')
-        question = randint(0, len(questions))
+        question = randint(0, len(questions) - 1)
         while question in past_questions:
-            question = randint(0, len(questions))
+            question = randint(0, len(questions) - 1)
         game_stat['past_question'] = question
+        game_stat['past_questions'].append(question)
         return questions[question]

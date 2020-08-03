@@ -5,7 +5,7 @@ from dialogues.base_dialogue import Dialogue
 class Game(Dialogue):
 
     def check_answer(self, tokens, level, question):
-        return len(set(get_file(questions_path[self.define_level(level)], 'questions')[question]) & tokens) > 0
+        return len(set(get_file(questions_path[self.define_level(level)], 'questions')[question]['right']) & tokens) > 0
 
     def __init__(self, request, user):
         tokens = set(request['nlu']['tokens'])

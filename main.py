@@ -12,6 +12,8 @@ def handler(event, context):
     user = User(cross_state)
     if event['session']['new'] and 'auth' not in user.state:
         user.state = 'greet'
+    if event['request']['intents'].get('GAME'):
+        user.state = 'game'
     dialogue = Creator.create(user)
     result = dialogue(event['request'], user)
     return form_response(event['version'], event['session'], result, user, state_key)

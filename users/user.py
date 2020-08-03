@@ -27,6 +27,8 @@ class User:
                 self.state = 'menu'
             else:
                 self.state = cross_state['state']
+                if cross_state == 'game':
+                    self.game = cross_state['game']
             if 'name' not in cross_state:
                 self.name = ''
                 self.state = 'auth_begin'

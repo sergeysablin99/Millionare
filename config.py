@@ -2,9 +2,15 @@ import json
 
 default_answers = 'content/answers.json'
 menus = 'content/menus.json'
+game_path = 'content/game.json'
 go_on = ['далее', 'дальше', 'продолжим', "продолжить", "продолжай", "продолжи", "хочу", "хотим", "хотелось", "давай",
          "следующщий", "следом", "след"]
 achievements_path = 'content/achievements.json'
+questions_path = {
+    "easy": "content/questions/easy.json",
+    "medium": "content/questions/medium.json",
+    "hard": "content/questions/hard.json"
+}
 
 
 def get_file(path, key=None):
